@@ -1,17 +1,15 @@
 """A sample CLI."""
 
 import click
-import log
 
-from . import utils
+from . import library
 
 
 @click.command()
 @click.argument('feet')
 def main(feet: str):
-    log.init()
 
-    meters = utils.feet_to_meters(feet)
+    meters = library.feet_to_meters(feet)
 
     if meters is not None:
         click.echo(meters)
